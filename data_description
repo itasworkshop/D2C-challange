@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The transaction table (csv) has a unique ID per transaction called the order_r_number. 
+
+
+
+Each transaction has 2 records by default; a “Sales Order” transaction_type marking an order happened on the website, and a “Sales Invoice” type 
+referring to an actually delivered and invoiced order. 
+
+
+As the business partner is only curious about fully completed orders (i.e. delivered and invoiced),
+
+you need to filter the data accordingly. In case a customer ordered more items in one transaction, each item appears in a new row under the same 
+order_r_number ID. 
+
+The item_code field refers to the ordered products and is a key for the items table. 
+
+
+
+The item table (csv) includes product-related data using the item_code as a primary ID like the name of the product (model_name) or whether the product 
+is shoes or apparel (item_category). It also includes an SKU field containing item model name, gender and item colour in a string. 
+
+
+
+The google analytics table (json) is a nested table containing data on user behaviour on the website like the device on which the user 
+visited the site (device), the marketing campaign the user clicked through the website (campaign) or the marketing channel the user arrived 
+like email or paid display (channel_grouping). Inside the double nested fields of hits_transaction, the transactionId field refers to the transaction ID 
+(order_r_number) of a purchase. The double nested fields of hits_social contains some information about the social media platforms users arrived to the 
+site. 
